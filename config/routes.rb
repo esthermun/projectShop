@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :galleries, only: [:index, :create]
+
   resources 'categories'
 
   resources 'products'

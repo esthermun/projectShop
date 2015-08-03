@@ -1,0 +1,3 @@
+<% @galleries.each do |gallery| %>
+  <div class="img-thumbnail"><%= image_tag gallery.image.url(:thumb), alt: gallery.image.url(:thumb) %></div>
+<% end %>

@@ -14,4 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require dropzone
 //= require_tree .
+
+$(document).ready(function(){
+	Dropzone.autoDiscover = false;
+
+	var dropzone = new Dropzone(".dropzone", {
+		maxFilesize: 256,
+		paramName: "gallery[image]",
+		addRemoveLinks: false
+	});
+
+	dropzone.on("success", function(file){
+		this.removeFile(file)
+		$.getScript("/galleries")	
+	})
+});
