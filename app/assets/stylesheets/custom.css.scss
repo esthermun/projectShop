@@ -1,0 +1,35 @@
+@import "bootstrap-sprockets";
+@import "bootstrap"; 
+
+body{
+	padding-top: 100px;
+}
+
+header{
+	nav{
+		margin-bottom: 0;
+
+		.navbar-header{ 
+			.icon-bar{
+				// background-color: #000;
+			}
+			.center{
+			margin-left: -50px !important;
+			}
+		}
+	}
+	
+	.subnav{
+
+		ul.center{
+			margin-left: -150px !important;
+		}
+	}
+	.center{
+		position: absolute;
+		left: 50%;
+		
+	}
+	
+}
+
