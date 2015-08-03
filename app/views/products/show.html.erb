@@ -5,7 +5,7 @@
 
 <div class="row">
 	<div class="col-xs-12 col-md-4">
-		<img src="" alt=""> the product image goes here
+		<%= image_tag @product.image.url(:medium), :class => "img-rounded" %>
 	</div> 
 	<div class="col-xs-12 col-md-4">
 		<h3>	<%= @product.name %> </h3>
