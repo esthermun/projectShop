@@ -1,5 +1,5 @@
 
-<%= form_for @product, :html => {:multipart => true} do |f| %>
+<%= form_for @product, :class => "dropzone", :id => "myAwesomeDropzone", :html => {:multipart => true} do |f| %>
 	<% if @product.errors.any? %>
 		<div id="error_explanation" class="error-box bg-danger">
 		  <h4 class="text-warning"><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h4>
