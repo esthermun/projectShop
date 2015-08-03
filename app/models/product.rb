@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
 	belongs_to :category
 
-	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100#" }
+	has_attached_file :image, :styles => { :medium => "400x400#", :small => "250x250#", :thumb => "100x100#" }
   	validates_attachment_presence :image
   	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   	

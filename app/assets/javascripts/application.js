@@ -16,3 +16,18 @@
 //= require dropzone
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+	Dropzone.autoDiscover = false;
+
+	var dropzone = new Dropzone(".dropzone", {
+		maxFilesize: 256,
+		paramName: "product[image]", 
+		addRemoveLinks: false	
+	});
+
+	dropzone.on("success", function(file){
+		this.removeFile(file)
+		$.getScript("/proucts")
+	});
+});

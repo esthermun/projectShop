@@ -13,9 +13,15 @@ class ProductsController < ApplicationController
 	def create
 		@product = Product.new(product_params)
 		if @product.save
-			flash[:notice] = "Product was successfully created."
+			# format.html{ redirect_to @product, notice: "Product was successfully created."}
+			# format.json {render json:, message: "success", :status => 200, fileId: @product.id}
+        	#render json: { message: "success", fileID: @post.id }, :status => 200
+			flash["notice"] = "Product was successfully created"
 			redirect_to @product
 		else
+			# format.html { render 'new', notice: "Product was not created."}
+			# format.json { render json:, error: @product.errors.full_messages.join(','), :status => 400} 
+        	 #render json: { error: @product.errors.full_messages.join(',')}, :status => 400
 			render "new"
 		end
 	end
