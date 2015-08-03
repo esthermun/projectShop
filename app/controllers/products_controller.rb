@@ -11,13 +11,17 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		@product = Product.new(product_params)
-		if @product.save
-			flash[:notice] = "Product was successfully created."
-			redirect_to @product
-		else
-			render "new"
+		# @product = Product.new(product_params)
+		params[:product][:images].each do |file|
+  		@product = Product.new(product_params, :images => file)
+ 		 @product.save
 		end
+		# if @product.save
+		# 	flash[:notice] = "Product was successfully created."
+		# 	redirect_to @product
+		# else
+		# 	render "new"
+		# end
 	end
 
 	def edit
@@ -47,6 +51,6 @@ class ProductsController < ApplicationController
 	end
 
 	def product_params
-		params.require(:product).permit(:name, :description, :sku, :price, :quantity, :category_id)
+		params.require(:product).permit(:name, :description, :sku, :price, :quantity, :category_id, :images)
 	end
 end
