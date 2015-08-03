@@ -12,7 +12,7 @@ gem 'bootstrap-sass', '~>3.3.5'
 
 #attachment
 gem 'paperclip', '~>4.3'
-
+gem 'dropzonejs-rails'
 # angular
 #gem 'angularjs-rails'
 #gem 'angular-rails-templates'
