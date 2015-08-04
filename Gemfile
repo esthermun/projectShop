@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 #user/admin authentication
 gem 'devise'
-#gem 'activeadmin', github: 'activeadmin'
-#gem 'cancancan', '~>1.0'
-#gem 'formtastic', '~> 3.0'
-#gem 'kaminari'
+gem 'activeadmin', github: 'activeadmin'
+gem 'cancancan', '~>1.0'
+gem 'formtastic', '~> 3.0'
+gem 'kaminari'
 
 #css bootstrap
 gem 'bootstrap-sass', '~>3.3.5'
