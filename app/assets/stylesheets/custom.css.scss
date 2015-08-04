@@ -2,12 +2,15 @@
 @import "bootstrap"; 
 
 body{
-	padding-top: 100px;
+	padding-top: 110px;
 }
 
 header{
-	nav{
+	.navbar-inverse{
 		margin-bottom: 0;
+		background-color:#64ffda;
+		border-color: #1de9b6;
+		padding-bottom: 10px;
 
 		.navbar-header{ 
 			.icon-bar{
@@ -35,5 +38,9 @@ header{
 .thumbnail{
 	padding: 10px 10px;
 	text-align: center;
+
+	input.qty{
+		width: 50px;
+	}
 }
 

@@ -10,21 +10,27 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
                  </button>
-        <a class="navbar-brand center" href="<%= root_path %>">Brand</a>
+        <a class="navbar-brand center" href="<%= root_path %>">SweetShop</a>
       </div>
-          
+
       <div class="collapse navbar-collapse" id="myNav">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Sign In</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User email <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Setting</a></li>
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">My Orders</a></li>
-              <li><a href="#">Log Out</a></li>
-            </ul>
-          </li>
+
+          <% if user_signed_in? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= current_user.email %><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><%= link_to "Setting", edit_user_registration %></a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">My Orders</a></li>
+                <li>%= link_to 'Log out', destroy_user_session_path, :method => :delete %></li>
+              </ul>
+            </li>
+
+            <% else %>
+              <li><%= link_to "Log in", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <% end %>
           <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> (0)</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -33,7 +39,7 @@
     <div class="container subnav">
       <div class="collapse navbar-collapse" id="myNav">
         <ul class="nav navbar-nav center">
-          <li><a href="#">Home</a></li> 
+          <li><%= link_to "All Products", products_path %></li> 
           <% Category.all.each do |c| %>
             <li><a href="#"><%=c.name%></a></li>  
           <% end %> 
@@ -52,4 +58,3 @@
   </nav>
 
 </header>
-<hr>
