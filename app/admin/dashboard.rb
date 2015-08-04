@@ -9,7 +9,33 @@ ActiveAdmin.register_page "Dashboard" do
         small I18n.t("active_admin.dashboard_welcome.call_to_action")
       end
     end
+end
 
+    # columns do 
+    #     column do
+    #         panel "Recent Products" do
+    #             table_for Product.recent(5).map do |product|
+    #                 column :name do |product|
+    #                     link_to product.name, [:admin, product]
+    #                 column :created_at
+    #             end
+    #             strong {link_to "View All Products", admin_products_path}
+    #         end
+    #     end
+    #     column do
+    #         panel "New Orders" do
+    #             ul do
+    #                 Order.recent.map do |order|
+    #                     li link_to(order.id, admin_order_path(order)) 
+    #                     column :created_at
+
+    #                 end
+    #             end
+    #         end
+    #     end
+
+
+    # end
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do
@@ -29,5 +55,5 @@ ActiveAdmin.register_page "Dashboard" do
     #     end
     #   end
     # end
-  end # content
+    # content
 end

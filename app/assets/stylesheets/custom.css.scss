@@ -2,7 +2,7 @@
 @import "bootstrap"; 
 
 body{
-	padding-top: 110px;
+	padding-top: 120px;
 }
 
 header{
@@ -32,8 +32,7 @@ header{
 		position: absolute;
 		left: 50%;
 		
-	}
-	
+	}	
 }
 .thumbnail{
 	padding: 10px 10px;
@@ -43,4 +42,11 @@ header{
 		width: 50px;
 	}
 }
-
+.show_product{
+	input.qty{
+		width: 50px;
+	}
+}
+.title{
+	margin-bottom: 40px;
+}

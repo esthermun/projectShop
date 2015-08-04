@@ -3,6 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def authenticate_active_admin_user!
+    authenticate_user!
+    unless current_user.admin?
+      flash[:alert] = "Access denied!"
+      redirect_to root_path
+    end
+  end
+
   # def after_sign_in_path_for(resource)
   #   if current_user.admin?
   # 	 redirect_to admin_root_path
@@ -10,7 +18,7 @@ class ApplicationController < ActionController::Base
   #     root_path
   #   end
   # end
-  
+
   #if the page doesnt have current_user set then use this.
 	# if current_user.try(:admin?)
 	# 	flash[:alert] = "Access denied"
