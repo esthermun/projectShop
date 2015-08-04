@@ -38,9 +38,9 @@
    
     <div class="container subnav">
       <div class="collapse navbar-collapse" id="myNav">
-        <ul class="nav navbar-nav center">
+        <ul class="nav navbar-nav left">
           <li><%= link_to "All Products", products_path %></li> 
-          <% Category.all.each do |c| %>
+          <% Category.order(:name).each do |c| %>
             <li><a href="#"><%=c.name%></a></li>  
           <% end %> 
         </ul>

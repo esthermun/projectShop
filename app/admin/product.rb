@@ -1,9 +1,12 @@
 ActiveAdmin.register Product do
+	menu label: "My Products"
 
-# See permitted parameters documentation:
+permit_params :name, :description, :quantity, :price, :sku, :category_id, :image
+
+
+#See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-# permit_params :list, :of, :attributes, :on, :model
 #
 # or
 #
