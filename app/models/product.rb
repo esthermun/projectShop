@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
 	belongs_to :category
+	# has_and_belongs_to_many :orders
 
 	has_attached_file :image, :styles => { :medium => "400x400#", :small => "250x250#", :thumb => "100x100#" }
   	validates_attachment_presence :image

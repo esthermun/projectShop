@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #user/admin authentication
-#gem 'devise'
+gem 'devise'
 #gem 'activeadmin', github: 'activeadmin'
 #gem 'cancancan', '~>1.0'
 #gem 'formtastic', '~> 3.0'
