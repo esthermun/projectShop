@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def authenticate_current_user!
-    authenticate_user!
+    authenticate__user!
     if current_user.admin != true
       flash[:alert] = "Access denied!"
       redirect_to root_path
